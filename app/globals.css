@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-900 text-gray-100;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-gradient-to-r from-cyber-blue via-cyber-green to-cyber-purple bg-clip-text text-transparent;
+  }
+  
+  .gradient-border {
+    @apply border-2 border-transparent bg-gradient-to-r from-cyber-blue via-cyber-green to-cyber-purple bg-clip-border;
+  }
+  
+  .code-block {
+    @apply bg-gray-800 p-4 rounded-lg overflow-x-auto;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-cyber-blue rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-cyber-green;
+}
+
+/* Syntax highlighting */
+pre {
+  @apply bg-gray-800 p-4 rounded-lg overflow-x-auto border border-gray-700;
+}
+
+code {
+  @apply bg-gray-800 px-1.5 py-0.5 rounded text-cyber-green font-mono text-sm;
+}
+
+pre code {
+  @apply bg-transparent p-0 text-gray-200;
+}
+
+/* Markdown/Prose styles */
+.prose {
+  @apply text-gray-300;
+}
+
+.prose h1 {
+  @apply text-4xl font-bold text-cyber-green mb-4;
+}
+
+.prose h2 {
+  @apply text-3xl font-bold text-cyber-green mb-4 mt-8;
+}
+
+.prose h3 {
+  @apply text-2xl font-semibold text-cyber-blue mb-3 mt-6;
+}
+
+.prose p {
+  @apply mb-4 leading-relaxed;
+}
+
+.prose strong {
+  @apply font-semibold text-white;
+}
+
+.prose a {
+  @apply text-cyber-blue hover:text-cyber-green underline transition-colors;
+}
+
+.prose ul {
+  @apply list-disc pl-6 mb-4;
+}
+
+.prose ol {
+  @apply list-decimal pl-6 mb-4;
+}
+
+.prose li {
+  @apply mb-2;
+}
+
+.prose blockquote {
+  @apply border-l-4 border-cyber-green pl-4 italic text-gray-400;
+}
+
+.prose hr {
+  @apply border-gray-700 my-8;
+}
+
+/* Center images inside markdown content */
+.prose img {
+  @apply block mx-auto my-6 rounded;
+}
+
