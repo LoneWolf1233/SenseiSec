@@ -1,6 +1,7 @@
 import { getAllPostIds, getPostData } from '@/lib/posts'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
+import { formatDate } from '@/lib/utils'
 
 type Props = {
   params: Promise<{
@@ -23,7 +24,7 @@ export default async function ArticlePage({ params }: Props) {
         href="/" 
         className="inline-flex items-center text-cyber-blue hover:text-cyber-green mb-8 transition-colors"
       >
-        ← Back to articles
+        ← Πίσω
       </Link>
 
       {/* Article Header */
@@ -40,11 +41,7 @@ export default async function ArticlePage({ params }: Props) {
         </h1>
         
         <p className="text-gray-400 text-lg mb-6">
-          {new Date(postData.date).toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
-          })}
+          {formatDate(postData.date)}
         </p>
 
         {/* Article Content */}
@@ -62,7 +59,7 @@ export default async function ArticlePage({ params }: Props) {
               rel="noopener noreferrer"
               className="inline-flex items-center px-4 py-2 rounded-md bg-cyber-blue/20 text-cyber-blue hover:text-cyber-green hover:bg-cyber-green/10 transition-colors"
             >
-              Visit Tool →
+              Github Link →
             </a>
           </div>
         )}

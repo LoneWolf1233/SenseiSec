@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { getSortedPostsData } from '@/lib/posts'
 import type { Post } from '@/lib/posts'
+import { formatDate } from '@/lib/utils'
 
 async function getPosts(): Promise<Post[]> {
   return getSortedPostsData()
@@ -43,7 +44,7 @@ export default async function Home() {
                   {post.description || 'Περισσότερα...'}
                 </p>
                 <div className="flex items-center justify-between text-sm text-gray-500">
-                  <span>{new Date(post.date).toLocaleDateString()}</span>
+                  <span>{formatDate(post.date)}</span>
                   <span className="text-cyber-blue">Περισσότερα →</span>
                 </div>
               </article>
@@ -74,7 +75,7 @@ export default async function Home() {
                   {tool.description}
                 </p>
                 <div className="flex justify-between items-center">
-                  <span className="text-cyber-blue">Περισσότερα →</span>
+                  <span className="text-cyber-blue">Περισσότερα... →</span>
                 </div>
               </article>
             </Link>
