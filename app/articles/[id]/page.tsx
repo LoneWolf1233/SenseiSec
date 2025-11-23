@@ -11,7 +11,9 @@ type Props = {
 
 export default async function ArticlePage({ params }: Props) {
   const { id } = await params
-  const postData = await getPostData(id)
+  // Remove .md extension if present
+  const normalizedId = id.replace(/\.md$/, '')
+  const postData = await getPostData(normalizedId)
 
   if (!postData) {
     notFound()
@@ -75,8 +77,13 @@ export default async function ArticlePage({ params }: Props) {
 
 export async function generateStaticParams() {
   const postIds = getAllPostIds()
-  return postIds.map((id) => ({
-    id: id.replace(/\.md$/, ''),
+  const params = postIds.map((id) => ({
+    id: id, // ID without .md (already stripped by getAllPostIds)
   }))
+  // Also generate params with .md extension for compatibility
+  const paramsWithMd = postIds.map((id) => ({
+    id: `${id}.md`,
+  }))
+  return [...params, ...paramsWithMd]
 }
 

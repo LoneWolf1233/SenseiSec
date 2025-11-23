@@ -1,18 +1,20 @@
 export function formatDate(dateString: string): string {
-  // Handle DD-MM-YYYY format
-  if (dateString.includes('-') && dateString.split('-').length === 3) {
-    const parts = dateString.split('-')
-    // Check if it's DD-MM-YYYY (first part is > 12) or YYYY-MM-DD (first part is 4 digits)
+  // Handle DD/MM/YYYY or DD-MM-YYYY format
+  const separator = dateString.includes('/') ? '/' : (dateString.includes('-') ? '-' : null)
+  
+  if (separator && dateString.split(separator).length === 3) {
+    const parts = dateString.split(separator)
+    // Check if it's YYYY-MM-DD or YYYY/MM/DD (first part is 4 digits)
     if (parts[0].length === 4) {
-      // YYYY-MM-DD format
+      // YYYY-MM-DD or YYYY/MM/DD format
       const [year, month, day] = parts
       return `${day}/${month}/${year}`
     } else if (parseInt(parts[0]) > 12) {
-      // DD-MM-YYYY format
+      // DD-MM-YYYY or DD/MM/YYYY format
       const [day, month, year] = parts
       return `${day}/${month}/${year}`
     } else {
-      // MM-DD-YYYY format (assuming)
+      // MM-DD-YYYY or MM/DD/YYYY format (assuming)
       const [month, day, year] = parts
       return `${day}/${month}/${year}`
     }
