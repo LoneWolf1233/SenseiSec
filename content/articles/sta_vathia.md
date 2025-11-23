@@ -127,13 +127,17 @@ namespace wathrvwqbtwwjb
 Δεν τον λες και εύκολο στην ανάγνωση. Κάποια σημεία δεν είναι ξεκάθαρα. Παρατηρούμε όμως τη λέξη "AES" η οποία αναφέρεται στον αλγόριθμο κρυπτογράφησης. Έχουμε λοιπόν ένα στοιχείο. Συνεχίζουμε.
 
 Ο αλγόριθμος αυτός χρησιμοποιείται για να κρύψει κάποιες μεταβλητές. Όμως, δεν τις κρύβει μόνο. Προδίδει επίσης και τα κλειδιά αποκρυπτογράφησης. 
-Passwords:
 
-```mvkjxbcaewygkqgqawjveaexshcdchkgedlggcllwchviujsqfkymqnmrnrpzzxxkscgdajyjxzbsjnyxjnwwltpqzptkwmxejjrsdppwmpqrlugztsqlbbzymrekrmmkbwiaxguvyziwdxdfitsewldijtemkdfacepqlgclxvmbscuqmycxvhnqszqdchkvuiuzhnucqfhbycrgynzlahevqyxlqyjpkrgiivhzeahpzmsqiifnhyumeyiiqhm```
 
- ```svsrgvhydfahaapvdghdgtwglxuejlyi```
 
- ```wnquhvkuakbhhrtl```
+```
+Password:
+mvkjxbcaewygkqgqawjveaexshcdchkgedlggcllwchviujsqfkymqnmrnrpzzxxkscgdajyjxzbsjnyxjnwwltpqzptkwmxejjrsdppwmpqrlugztsqlbbzymrekrmmkbwiaxguvyziwdxdfitsewldijtemkdfacepqlgclxvmbscuqmycxvhnqszqdchkvuiuzhnucqfhbycrgynzlahevqyxlqyjpkrgiivhzeahpzmsqiifnhyumeyiiqhm
+
+ svsrgvhydfahaapvdghdgtwglxuejlyi
+
+ wnquhvkuakbhhrtl
+ ```
 
 Κάνοντας χρήση αυτών και με κάποια LLM μαγικά οδηγούμαστε στον κώδικα που θα ξετυλίξει το μυστήριο.
 
