@@ -18,7 +18,10 @@ link: --
 
 **SHA256**: 7ce796c836d61ce3594bee77bcf32f4ead1a4aa315739078f76a31f1eaf1cdd4
 
-**SHA512**:f15937a9e325f7f08b8c381b58f67dbb8fd2b49e49aea266b6d66e15e9fb6efa5ea82624eef072d808c3a263ef04b21727c2b4d845b0af9521a42a447054fa08
+**SHA512**:
+```
+f15937a9e325f7f08b8c381b58f67dbb8fd2b49e49aea266b6d66e15e9fb6efa5ea82624eef072d808c3a263ef04b21727c2b4d845b0af9521a42a447054fa08
+```
 
 **SSDEEP**:
 393216:c123X/zobDMNqMgD/Nx1g6qxeJofmHu3FnQOqHi1o:z3roHoqvD/NxS6nofm26Cm
@@ -253,4 +256,5 @@ han-suck-soo-apologizes[.]com
 ## ΕΠΙΛΟΓΟΣ
 
 Αυτό το ήταν το πιο λεπτομερές από όλα μου τα άρθρα μέχρι τώρα. Προφανώς θα συνεχιστούν και ελπίζω σύντομα να γράψω άρθρο με Reverse Engineering τέτοιου ιού, ωστόσο κάτι τέτοιο είναι χρονοβόρο και αρκετά δύσκολο οπότε υπομονή :)
+
 
