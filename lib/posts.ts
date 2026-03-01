@@ -16,6 +16,27 @@ export interface Post {
   link?: string
 }
 
+function parsePostDate(dateStr: string): number {
+  if (!dateStr) return 0
+
+  // Support DD-MM-YYYY (your current format)
+  const dmyMatch = /^(\d{1,2})-(\d{1,2})-(\d{4})$/.exec(dateStr)
+  if (dmyMatch) {
+    const [, d, m, y] = dmyMatch
+    return Date.UTC(Number(y), Number(m) - 1, Number(d))
+  }
+
+  // Fallback for ISO-like YYYY-MM-DD
+  const ymdMatch = /^(\d{4})-(\d{1,2})-(\d{1,2})$/.exec(dateStr)
+  if (ymdMatch) {
+    const [, y, m, d] = ymdMatch
+    return Date.UTC(Number(y), Number(m) - 1, Number(d))
+  }
+
+  const parsed = Date.parse(dateStr)
+  return Number.isNaN(parsed) ? 0 : parsed
+}
+
 export function getAllPostIds() {
   const fileNames = fs.readdirSync(postsDirectory)
   return fileNames.filter(name => name.endsWith('.md')).map(fileName => fileName.replace(/\.md$/, ''))
@@ -69,16 +90,7 @@ export function getSortedPostsData(): Post[] {
       }
     })
 
-  return allPostsData.sort((a, b) => {
-    if (a.date < b.date) {
-      return 1
-    } else {
-      return -1
-    }
-  })
+  // Newest first
+  return allPostsData.sort((a, b) => parsePostDate(b.date) - parsePostDate(a.date))
 }
-
-
-
-
 

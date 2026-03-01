@@ -10,6 +10,7 @@ async function getPosts(): Promise<Post[]> {
 export default async function Home() {
   const posts = await getPosts()
 
+  const latestPosts = posts.slice(0, 4)
   const writeups = posts.filter(post => post.category === 'Writeup').slice(0, 6)
   const tools = posts.filter(post => post.category === 'Tool').slice(0, 6)
 
@@ -24,6 +25,31 @@ export default async function Home() {
           Κυβερνοασφάλεια για όλους.
         </p>
       </div>
+
+      {/* Latest Articles Section */}
+      <section className="mb-20">
+        <h2 className="text-4xl font-bold mb-8 text-cyber-green">Τελευταία άρθρα</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {latestPosts.map((post) => (
+            <Link key={post.id} href={`/articles/${post.id}`}>
+              <article className="bg-gray-800 rounded-lg p-6 hover:bg-gray-750 transition-all hover:shadow-lg hover:shadow-cyber-green/20 border border-gray-700 hover:border-cyber-green/50">
+                <div className="mb-3 flex items-center justify-between text-sm text-gray-400">
+                  <span className="inline-block px-3 py-1 bg-cyber-blue/20 text-cyber-blue rounded-full text-xs">
+                    {post.category}
+                  </span>
+                  <span>{formatDate(post.date)}</span>
+                </div>
+                <h3 className="text-xl font-bold mb-2 text-cyber-green">
+                  {post.title}
+                </h3>
+                <p className="text-gray-400 mb-2 line-clamp-2">
+                  {post.description || 'Περισσότερα...'}
+                </p>
+              </article>
+            </Link>
+          ))}
+        </div>
+      </section>
 
       {/* Writeups Section */}
       <section className="mb-20">
