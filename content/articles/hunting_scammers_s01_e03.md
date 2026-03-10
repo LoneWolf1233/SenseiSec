@@ -1,6 +1,6 @@
 ---
 title: Κυνηγώντας τους Απατεώνες
-date: 01-03-2026
+date: 01/03/2026
 category: Writeup
 description: Σ01 Ε03
 link: --

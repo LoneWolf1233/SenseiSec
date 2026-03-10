@@ -1,6 +1,6 @@
 ---
 title: Toolbox
-date: 10-10-2025
+date: 10/10/2025
 category: Tool
 description: Εύκολη εγκατάσταση εργαλείων
 link: https://github.com/LoneWolf1233/bbp/blob/main/toolbox.sh

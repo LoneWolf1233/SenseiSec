@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import { getSortedPostsData } from '@/lib/posts'
 import type { Post } from '@/lib/posts'
-import { formatDate } from '@/lib/utils'
 
 async function getPosts(): Promise<Post[]> {
   return getSortedPostsData()
@@ -37,7 +36,7 @@ export default async function Home() {
                   <span className="inline-block px-3 py-1 bg-cyber-blue/20 text-cyber-blue rounded-full text-xs">
                     {post.category}
                   </span>
-                  <span>{formatDate(post.date)}</span>
+                  <span>{post.date}</span>
                 </div>
                 <h3 className="text-xl font-bold mb-2 text-cyber-green">
                   {post.title}
@@ -70,7 +69,7 @@ export default async function Home() {
                   {post.description || 'Περισσότερα...'}
                 </p>
                 <div className="flex items-center justify-between text-sm text-gray-500">
-                  <span>{formatDate(post.date)}</span>
+                  <span>{post.date}</span>
                   <span className="text-cyber-blue">Περισσότερα →</span>
                 </div>
               </article>

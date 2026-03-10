@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import { getSortedPostsData } from '@/lib/posts'
-import { formatDate } from '@/lib/utils'
 
 export default async function WriteupsPage() {
   const posts = getSortedPostsData().filter(p => p.category === 'Writeup')
@@ -24,7 +23,7 @@ export default async function WriteupsPage() {
                 {post.description || 'Περισσότερα...'}
               </p>
               <div className="flex items-center justify-between text-sm text-gray-500">
-                <span>{formatDate(post.date)}</span>
+                <span>{post.date}</span>
                 <span className="text-cyber-blue">Περισσότερα →</span>
               </div>
             </article>

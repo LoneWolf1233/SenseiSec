@@ -1,6 +1,6 @@
 ---
 title: Toolbox 2.0
-date: 24-02-2026
+date: 24/02/2026
 category: Tool
 description: Εύκολη εγκατάσταση εργαλείων
 link: https://github.com/LoneWolf1233/bbp

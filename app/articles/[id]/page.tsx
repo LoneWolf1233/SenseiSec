@@ -1,7 +1,6 @@
 import { getAllPostIds, getPostData } from '@/lib/posts'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import { formatDate } from '@/lib/utils'
 
 type Props = {
   params: Promise<{
@@ -43,7 +42,7 @@ export default async function ArticlePage({ params }: Props) {
         </h1>
         
         <p className="text-gray-400 text-lg mb-6">
-          {formatDate(postData.date)}
+          {postData.date}
         </p>
 
         {/* Article Content */}

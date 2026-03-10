@@ -53,6 +53,12 @@ export async function getPostData(id: string): Promise<Post | null> {
 
   const matterResult = matter(fileContents)
 
+  const rawDate = matterResult.data.date
+  const date =
+    rawDate instanceof Date
+      ? rawDate.toISOString().slice(0, 10)
+      : (rawDate ?? '').toString()
+
   const processedContent = await remark()
     .use(html)
     .process(matterResult.content)
@@ -62,7 +68,7 @@ export async function getPostData(id: string): Promise<Post | null> {
     id,
     contentHtml,
     title: matterResult.data.title || 'Untitled',
-    date: matterResult.data.date || '',
+    date,
     category: matterResult.data.category || 'General',
     description: matterResult.data.description || '',
     link: matterResult.data.link || '',
@@ -80,10 +86,16 @@ export function getSortedPostsData(): Post[] {
       const fileContents = fs.readFileSync(fullPath, 'utf8')
       const matterResult = matter(fileContents)
 
+      const rawDate = matterResult.data.date
+      const date =
+        rawDate instanceof Date
+          ? rawDate.toISOString().slice(0, 10)
+          : (rawDate ?? '').toString()
+
       return {
         id,
         title: matterResult.data.title || 'Untitled',
-        date: matterResult.data.date || '',
+        date,
         category: matterResult.data.category || 'General',
         description: matterResult.data.description || '',
         link: matterResult.data.link || '',

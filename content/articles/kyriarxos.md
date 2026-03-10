@@ -1,6 +1,6 @@
 ---
 title: Κυρίαρχος
-date: 10-03-2026
+date: 10/03/2026
 category: Writeup
 description: Εξερεύνηση του αγνώστου...
 link: --
