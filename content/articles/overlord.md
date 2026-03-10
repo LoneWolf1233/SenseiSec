@@ -1,5 +1,5 @@
 ---
-title: Κυρίαρχος
+title: Overlord
 date: 10/03/2026
 category: Writeup
 description: Εξερεύνηση του αγνώστου...
