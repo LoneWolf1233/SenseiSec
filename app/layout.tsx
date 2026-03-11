@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import Nav from '@/components/nav'
+import { Analytics } from '@vercel/analytics/next'
 
 export const metadata: Metadata = {
   title: 'SenseiSec - Όλα για την κυβερνοασφάλεια',
@@ -17,6 +18,7 @@ export default function RootLayout({
       <body className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-900 to-gray-800">
         <Nav />
         {children}
+        <Analytics />
       </body>
     </html>
   )
