@@ -19,8 +19,8 @@ export interface Post {
 function parsePostDate(dateStr: string): number {
   if (!dateStr) return 0
 
-  // Support DD-MM-YYYY (your current format)
-  const dmyMatch = /^(\d{1,2})-(\d{1,2})-(\d{4})$/.exec(dateStr)
+  // Support DD-MM-YYYY or DD/MM/YYYY
+  const dmyMatch = /^(\d{1,2})[-\/](\d{1,2})[-\/](\d{4})$/.exec(dateStr)
   if (dmyMatch) {
     const [, d, m, y] = dmyMatch
     return Date.UTC(Number(y), Number(m) - 1, Number(d))
